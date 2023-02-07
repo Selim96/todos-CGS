@@ -5,6 +5,8 @@ import serviceApi from '../service/http.service';
 import HomeTablet from './HomeTablet/HomeTablet';
 import TabletSlider from './TabletSlider/TabletSlider';
 import MobileList from './MobileList/MobileList';
+import Container from '../Container';
+import s from './index.module.scss';
 
 const HomePage: React.FC = () => {
   const { isLoading, isError, isSuccess, data } = useQuery('todos', () =>
@@ -14,14 +16,14 @@ const HomePage: React.FC = () => {
   console.log(data);
 
   return (
-    <div>
+    <>
       {isLoading ? (
         'Loading...'
       ) : (
         <>
           {isError ? <div>An error occurred: </div> : null}
           {isSuccess ? (
-            <div>
+            <Container>
               <Media
                 queries={{
                   small: '(max-width: 767px)',
@@ -31,7 +33,9 @@ const HomePage: React.FC = () => {
                 }}
               >
                 {(matches) => (
-                  <div id="container">
+                  <div className={s.main}>
+                    <button>New Todo</button>
+                    <input type="text" name="query" placeholder='query'/>
                     {matches.small && <MobileList data={data} />}
                     {matches.maxSmall && matches.medium && <TabletSlider data={data} />}
                     {matches.large && (
@@ -42,11 +46,11 @@ const HomePage: React.FC = () => {
                   </div>
                 )}
               </Media>
-            </div>
+            </Container>
           ) : null}
         </>
       )}
-    </div>
+    </>
   );
 };
 

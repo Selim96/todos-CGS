@@ -3,7 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import { ThemeProvider } from 'styled-components';
-import { MainRouter } from '../navigation';
+import MainRouter from '../navigation';
 
 import * as theme from '../theme';
 import * as Styled from './app.styled';

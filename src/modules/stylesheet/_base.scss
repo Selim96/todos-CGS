@@ -1,11 +1,26 @@
-html {
-  overflow: scroll;
-}
+@import "./mixin";
+@import-normalize;
+/* bring in normalize.css styles */
 
-html,
+// html {
+//   overflow: scroll;
+// }
+
 body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
   max-width: 100%;
   overflow-x: hidden;
+  position: relative;
+  height: 100%;
+
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
 }
 
 ::-webkit-scrollbar {
@@ -13,8 +28,9 @@ body {
   background: transparent; /* make scrollbar transparent */
 }
 
-iframe {
-  display: none;
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
 
 ul {
@@ -35,40 +51,23 @@ h1, h2, h3, h4 {
   margin: 0;
 }
 
-/* .swiper {
-  left: 125px;
-  overflow: visible;
-} */
-
-#app {
-  height: 100%;
-}
-html,
-body {
-  position: relative;
-  height: 100%;
+iframe {
+  display: none;
 }
 
-body {
-  background: #eee;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  color: #000;
-  margin: 0;
-  padding: 0;
+#root {
+  height: 100%;
 }
 
 .swiper {
   width: 100%;
-  height: 100%;
+  height: 50%;
 }
 
-.swiper-slide {
+.swiper-wrapper .swiper-slide {
   text-align: center;
   font-size: 18px;
   background: #fff;
-
-  /* Center slide text vertically */
   display: flex;
   justify-content: center;
   align-items: center;

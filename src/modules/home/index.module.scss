@@ -1,0 +1,8 @@
+@import '../stylesheet/mixin';
+
+.main {
+
+    @include mq(tablet) {
+        height: 100vh;
+    }
+}

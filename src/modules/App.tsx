@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
-import '../style.css';
+import './stylesheet/shared.scss';
 import MainRouter from './navigation';
 
 const queryClient = new QueryClient({

@@ -1,0 +1,12 @@
+@import '../../stylesheet/mixin';
+
+.slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  color: red;
+}
