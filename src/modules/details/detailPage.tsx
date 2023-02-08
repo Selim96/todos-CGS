@@ -1,8 +1,7 @@
 import React from 'react';
 import { useQuery } from 'react-query';
 import { useParams, useNavigate } from 'react-router-dom';
-import PrivateSwitch from '../Buttons/PrivateSwitch';
-import StatusSwitch from '../Buttons/StatusSwitch';
+import { StatusSwitch, PrivateSwitch } from '../Buttons';
 import serviceApi from '../service/http.service';
 // import { IItem } from '../common/types/student.types';
 
@@ -15,7 +14,7 @@ const DetailPaige: React.FC = () => {
     navigate('/home');
   };
 
-  function useTodo(todoId: string) {
+  function useTodo(todoId: string | undefined) {
     return useQuery(['todo', todoId], () => serviceApi.getById(todoId).then((res) => res.data), {
       enabled: !!todoId
     });

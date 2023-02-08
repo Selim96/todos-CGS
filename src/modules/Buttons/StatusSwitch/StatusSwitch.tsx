@@ -1,15 +1,11 @@
 import React from 'react';
 import Switch from '@mui/material/Switch';
 import { useMutation, useQueryClient } from 'react-query';
-import serviceApi from '../service/http.service';
-import { StatusPatch } from '../common/types/student.types';
+import serviceApi from '../../service/http.service';
+import { StatusPatch } from '../../common/types/student.types';
+import { Props } from '../index';
 
-type SwitchProps = {
-  checked?: boolean | undefined;
-  itemId: string;
-};
-
-const StatusSwitch: React.FC<SwitchProps> = (props) => {
+const StatusSwitch: React.FC<Props> = (props) => {
   // const [status, setStatus] = useState<boolean>(false);
   const { checked, itemId } = props;
 

@@ -1,12 +1,11 @@
 import React from 'react';
 import { useMutation, useQueryClient } from 'react-query';
-import serviceApi from '../service/http.service';
+import serviceApi from '../../service/http.service';
+import Button from '@mui/material/Button';
+import DeleteIcon from '@mui/icons-material/Delete';
+import { Props } from '../index';
 
-type ButtonType = {
-  itemId: string;
-};
-
-const DeleteBtn: React.FC<ButtonType> = ({ itemId }) => {
+const DeleteBtn: React.FC<Props> = ({ itemId }) => {
   const queryClient = useQueryClient();
 
   const mutation = useMutation(
@@ -29,14 +28,11 @@ const DeleteBtn: React.FC<ButtonType> = ({ itemId }) => {
   // }
 
   return (
-    <button
-      type="button"
-      onClick={() => {
+    <Button variant="outlined" startIcon={<DeleteIcon />} onClick={() => {
         mutation.mutate(itemId);
-      }}
-    >
+      }} >
       Delete
-    </button>
+    </Button>
   );
 };
 

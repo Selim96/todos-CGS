@@ -1,22 +1,21 @@
 import React from 'react';
 import { IProps } from '../../common/types/student.types';
-import ViewBtn from '../../Buttons/ViewBtn';
-import DeleteBtn from '../../Buttons/DeleteBtn';
-import StatusSwitch from '../../Buttons/StatusSwitch';
+import Actions from '../../Buttons';
+import s from './MobileList.module.scss';
 
 const MobileList: React.FC<IProps> = ({ data }) => (
-  <ul>
+  <ul className={s.list}>
     {data.map((item) => {
       const { _id: id, title, description, status } = item;
+      const itemStyle = [s.list_item, s.status_false];
+      if (status) {
+        itemStyle.splice(1, 1, s.status_true)
+      }
       return (
-        <li key={id}>
-          <h2>{title}</h2>
-          <p>{description}</p>
-          <div>
-            <ViewBtn itemId={id} />
-            <DeleteBtn itemId={id} />
-            <StatusSwitch checked={status} itemId={id} />
-          </div>
+        <li key={id} className={itemStyle.join(" ")}>
+          <h2 className={s.list_title}>{title}</h2>
+          <p className={s.list_text}>{description}</p>
+          <Actions checked={status} itemId={id} /> 
         </li>
       );
     })}

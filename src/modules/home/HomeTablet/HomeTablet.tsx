@@ -7,9 +7,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { IProps } from '../../common/types/student.types';
-import DeleteBtn from '../../Buttons/DeleteBtn';
-import ViewBtn from '../../Buttons/ViewBtn';
-import StatusSwitch from '../../Buttons/StatusSwitch';
+import Actions from '../../Buttons';
 
 const HomeTablet: React.FC<IProps> = ({ data }) => (
   <TableContainer component={Paper}>
@@ -29,9 +27,7 @@ const HomeTablet: React.FC<IProps> = ({ data }) => (
             </TableCell>
             <TableCell align="right">{item.description}</TableCell>
             <TableCell align="right">
-              <ViewBtn itemId={item._id} />
-              <DeleteBtn itemId={item._id} />
-              <StatusSwitch itemId={item._id} checked={item.status} />
+              <Actions itemId={item._id} checked={item.status} />
             </TableCell>
           </TableRow>
         ))}

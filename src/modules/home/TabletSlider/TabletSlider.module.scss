@@ -3,10 +3,31 @@
 .slide {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+  height: 100%;
+  width: 80%;
+  padding-bottom: 45px;
+  padding-top: 30px;
+  box-sizing: border-box;
 }
 
-.title {
-  color: red;
+.slide_title {
+  text-transform: capitalize;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-weight: 700;
+  width: 100%;
+  text-align: start;
+  margin-bottom: 10px;
+}
+
+.slide_text {
+  margin-bottom: 15px;
+  flex-grow: 1;
+  text-align: start;
+  width: 100%;
+  overflow: scroll;
 }

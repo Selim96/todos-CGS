@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import HomePage from '../home';
-import DetailPaige from '../details/detailPage';
+import DetailPaige from '../Details/DetailPage';
 import { APP_KEYS } from '../common/consts';
 
 const MainRouter: React.FC = () => (

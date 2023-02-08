@@ -13,8 +13,6 @@ const HomePage: React.FC = () => {
     serviceApi.get().then((res) => res.data)
   );
 
-  console.log(data);
-
   return (
     <>
       {isLoading ? (
